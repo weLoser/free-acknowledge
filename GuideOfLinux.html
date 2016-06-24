@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://www.whatsroot.xyz/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Linux使用教程</title> 
+    <!-- CSS fonts.googleapis.com -->
+    <link href="./icon" rel="stylesheet">
+    <link href="./materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="./style.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="http://www.whatsroot.xyz/" class="brand-logo">PMI@PEH</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="http://www.whatsroot.xyz/index.php">首页</a></li>
+            <li><a href="http://www.whatsroot.xyz/tutorial.html">资料查询</a></li>
+            <li><a href="http://www.whatsroot.xyz/code.php">邀请码</a></li>
+            <li><a href="http://www.whatsroot.xyz/user">用户中心</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav" style="left: -250px;">
+            <li><a href="http://www.whatsroot.xyz/index.php">首页</a></li>
+            <li><a href="http://www.whatsroot.xyz/tutorial.html">资料查询</a></li>
+            <li><a href="http://www.whatsroot.xyz/code.php">邀请码</a></li>
+            <li><a href="http://www.whatsroot.xyz/user">用户中心</a></li>
+        </ul>
+        <a href="http://www.whatsroot.xyz/#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+
+
+
+<div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br><br>
+            <h3 class="header center orange-text">Linux使用教程</h3>
+            <h5 class="header center blue-text">(任何一步遇到问题，可进群讨论.QQ群:414301879)</h5>
+            <div class="row">
+                <h4 class="header col s12 light">一、安装shadowsocks软件</h4>
+                 <ol>
+                    <h5 class="header col s12 light">
+                        <li>在Ubuntu/Debian下：</li>
+                    </h5>
+                    <p>sudo apt-get install python-pip</p>
+                    <p>sudo pip install shadowsocks</p>
+                    <h5 class="header col s12 light">
+                    <li>在CentOs/RedHat下：</li>
+                    </h5>
+                    <p>sudo yum install python-pip</p>
+                    <p>sudo yum install shadowsocks</p>
+                </ol>
+                <h4 class="header col s12 light">二、创建配置文件</h4>
+                    <p class="header col s12 light">
+                    查看帐号信息,并创建配置文件：config.json <br/>(此处直接新建一个名为config.json的文本即可,文本内填入以下内容，并把红色内容改为你自己帐号对应的信息)
+                    </p>
+                    <p>
+                        {<br>
+                        "server":<font color="#FF0000"> "my_server_ip"</font>, <br>
+                        "server_port":<font color="#FF0000"> 0000</font>, <br>
+                        "local_address":"127.0.0.1",<br>
+                        "local_port":1080, <br>
+                        "password":<font color="#FF0000"> "my_passwd"</font>, <br>
+                        "timeout":600,<br>
+                        "method":"aes-256-cfb"<br>
+                        }<br>
+                    </p>
+                <h4 class="header col s12 light">三、启动shadowsocks</h4>
+                    <p class="header col s12 light">
+                     运行shadowsocks使用命令:<br/>sslocal -c config.json
+                    <strong><br/>
+                    (若不在config.json的目录下执行此命令，记得在config.json前加上路径)</strong><br/>若不想看到输出信息，可使用命令:
+                     <br/>nohup sslocal -c config.json >/dev/null 2>&1 &</p>
+                <h4 class="header col s12 light">四、下载浏览器扩展包</h4>
+                    <h6>根据链接前往下载SwichyOmega扩展，在如图所示的位置下载SwitchySharp.crx文件<a href="https://github.com/FelisCatus/SwitchyOmega/releases"><strong>点我下载SwichyOmega</strong></a><h6>
+                    <img src="./linux_chrome_01.png" height="600"  class="img-responsive img-centered" >
+                <h4 class="header col s12 light">五、google-chrome浏览器配置：</h4> 
+                <ol>
+                    <p class="header col s12 light">
+                        <li>运行chrome浏览器，点击右上角菜单-设置(s)-扩展程序：</li>
+                    </p>
+                    <img src="./linux_chrome_02.jpg" height="450" class="img-responsive img-centered"><br>
+                    <p class="header col s12 light">
+                    <li>然后将SwitchySharp.crx拖到扩展程序页面,点击添加：</li></p>
+                    <img src="./linux_chrome_03.jpg" height="450" class="img-responsive img-centered"><br>
+                    <p class="header col s12 light">
+                    <li>加入成功后右上角会显示<img src="./linux_chrome_04.png" class="img-responsive img-centered">，右击-选项，打开配置选项卡。</li></p>
+                    <p class="header col s12 light">
+                    <li>选择新建情景模式，将链接复制<a class="nav-link" href="https://raw.githubusercontent.com/KyonLi/ss-pac/master/ss.pac"><span class="nav-text">https://raw.githubusercontent.com/KyonLi/ss-pac/master/ss.pac</span></a>到PAC网址中并保存。</li></p>
+                    <h6 class="header col s12 light">
+                    <img src="./linux_chrome_05.png" height="450" class="img-responsive img-centered"><br>
+                    <img src="./linux_chrome_06.png" height="450" class="img-responsive img-centered"><br>
+                    <li>在Chrom中点击<img src="./linux_chrome_04.png" class="img-responsive img-centered">-选择新建的情景模式即可。</li></h6>
+                </ol>   
+                <h4 class="header col s12 light">六、Firefox浏览器配置：</h4>
+                    <h6 class="header col s12 light">
+                    敬请期待！</h6>
+                <div class="row center">
+                    <h5>
+                       <a href="../tutorial.html" id="download-button" class="btn-large waves-effect waves-light blue">返回</a>
+                    </h5>
+        		</div>
+            </div>
+        </div>
+</div>
+    <br><br>
+</div>
+<div id="analytics-code" style="display:none">
+     统计代码
+</div><footer class="page-footer orange">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">关于</h5>
+                <p class="grey-text text-lighten-4">本站主要讨论CERN ROOT软件的使用方法.</p>
+
+
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">用户</h5>
+                <ul>
+                    <li><a class="white-text" href="http://www.whatsroot.xyz/user">用户中心</a></li>
+                    <li><a class="white-text" href="http://www.whatsroot.xyz/user/login.php">登录</a></li>
+                    <li><a class="white-text" href="http://www.whatsroot.xyz/user/register.php">注册</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">页面</h5>
+                <ul>
+                    <li><a class="white-text" href="http://www.whatsroot.xyz/code.php">邀请码</a></li>
+                    <li><a class="white-text" href="http://www.whatsroot.xyz/user/tos.php">TOS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © PMI@PEH  2016  Powered by <a class="orange-text text-lighten-3" href="https://github.com/orvice/ss-panel">ss-panel</a> 2.4.7            Processed in 0.3ms Theme by <a class="orange-text text-lighten-3" href="http://materializecss.com/">Materialize</a>
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="./jQuery.min.js"></script>
+<script src="./materialize.min.js"></script>
+<script src="./init.js"></script>
+
+
+
+<div class="hiddendiv common"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div></body><iframe allowtransparency="true" frameborder="0" id="abs-top-frame" src="./top.html" style="position: fixed !important; z-index: 2147483647 !important; overflow: hidden !important; top: 0px !important; left: 0px !important; right: 0px !important; width: 138px !important; height: 13px !important; max-height: none !important; min-height: 0px !important; margin: 0px auto !important; padding: 0px !important; border: 0px !important; display: block !important; background-color: transparent !important;"></iframe></html>
